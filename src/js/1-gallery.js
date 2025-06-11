@@ -72,7 +72,8 @@ const galleryList = document.querySelector('.gallery');
 // Функція для створення розмітки галереї
 function createGalleryMarkup(images) {
   return images
-    .map(({ preview, original, description }) => `
+    .map(
+      ({ preview, original, description }) => `
       <li class="gallery-item">
         <a class="gallery-link" href="${original}">
           <img
@@ -82,7 +83,8 @@ function createGalleryMarkup(images) {
           />
         </a>
       </li>
-    `)
+    `
+    )
     .join('');
 }
 
@@ -94,4 +96,4 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom',
-}); 
+});
